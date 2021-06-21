@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/formCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="8dp"
+        app:strokeColor="@color/colorLightGrey"
+        app:strokeWidth="1dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/addressTil"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    app:boxCornerRadiusBottomEnd="0dp"
+                    app:boxCornerRadiusBottomStart="0dp"
+                    app:boxCornerRadiusTopEnd="0dp"
+                    app:boxCornerRadiusTopStart="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/addressEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/address"
+                        android:inputType="text"
+                        android:padding="12dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/floorsCountTil"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/addressTil"
+                    android:layout_margin="12dp"
+                    app:boxCornerRadiusBottomEnd="0dp"
+                    app:boxCornerRadiusBottomStart="0dp"
+                    app:boxCornerRadiusTopEnd="0dp"
+                    app:boxCornerRadiusTopStart="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/floorsCountEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/floor_count"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:padding="12dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/longitudeWrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/floorsCountTil"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/locationLongitudeTil"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_weight="1"
+                        app:boxCornerRadiusBottomEnd="0dp"
+                        app:boxCornerRadiusBottomStart="0dp"
+                        app:boxCornerRadiusTopEnd="0dp"
+                        app:boxCornerRadiusTopStart="0dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/locationLongitudeEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/longitude"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:padding="12dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/getCurrentLocationBtn"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="12dp"
+                        app:cornerRadius="0dp"
+                        app:icon="@drawable/map_marker_plus" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/latitudeWrapper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/longitudeWrapper"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/locationLatitudeTil"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="12dp"
+                        android:layout_weight="1"
+                        app:boxCornerRadiusBottomEnd="0dp"
+                        app:boxCornerRadiusBottomStart="0dp"
+                        app:boxCornerRadiusTopEnd="0dp"
+                        app:boxCornerRadiusTopStart="0dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/locationLatitudeEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/latitude"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:padding="12dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/selectLocationFromMapBtn"
+                        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="12dp"
+                        app:cornerRadius="0dp"
+                        app:icon="@drawable/map_search" />
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/selectedImagesRVTil"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/latitudeWrapper"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    app:boxCornerRadiusBottomEnd="0dp"
+                    app:boxCornerRadiusBottomStart="0dp"
+                    app:boxCornerRadiusTopEnd="0dp"
+                    app:boxCornerRadiusTopStart="0dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/selectedImagesRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/selected_images_item" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/updateImagesBtn"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/selectedImagesRVTil"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="@string/update_image"
+                    android:textColor="@color/colorGrey"
+                    app:cornerRadius="0dp"
+                    app:icon="@drawable/multiple_image" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/updateHouseBtn"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/updateImagesBtn"
+                    android:layout_margin="12dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:text="@string/update_house"
+                    app:cornerRadius="0dp" />
+            </RelativeLayout>
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>
+

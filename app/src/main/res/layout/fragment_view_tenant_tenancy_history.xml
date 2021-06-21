@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="8dp"
+                app:strokeColor="@color/colorLightGrey"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/ownerImage"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="4dp"
+                            android:src="@mipmap/user"
+                            app:civ_border_color="@color/colorWhite"
+                            app:civ_border_width="2dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:baselineAligned="false">
+
+                                <TextView
+                                    android:id="@+id/ownerName"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/dummy_user" />
+
+                                <TextView
+                                    android:id="@+id/houseAddress"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="2"
+                                    android:drawablePadding="2dp"
+                                    android:text="@string/dummy_address"
+                                    app:drawableStartCompat="@drawable/map_marker_dark_12dp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tenancyInfo"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dummy_tenancy_info" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tenancyStartDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="4dp"
+                                    android:drawablePadding="8dp"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/dummy_date"
+                                    android:textSize="12sp"
+                                    app:drawableStartCompat="@drawable/calendar_start_18dp" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+
+                                <TextView
+                                    android:id="@+id/tenancyEndDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="8dp"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/dummy_date"
+                                    android:textSize="12sp"
+                                    app:drawableStartCompat="@drawable/calendar_end_18dp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="12dp">
+
+                        <TextView
+                            android:id="@+id/previousImageBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:padding="8dp"
+                            app:drawableStartCompat="@drawable/arrow_left"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="@+id/tenancyImage"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/tenancyImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="230dp"
+                            android:contentDescription="@string/tenancy_room_images"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/image_placeholder"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/nextImageBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="2dp"
+                            android:padding="8dp"
+                            app:drawableStartCompat="@drawable/arrow_right"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="@+id/tenancyImage"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tenancyDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:text="@string/your_tenancy_details_format" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="24dp"
+                        android:background="@drawable/grey_border"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="2"
+                                android:text="@string/advance_amount"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/tenancyAdvanceAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dummy_advance_amount"
+                                android:textSize="20sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="?android:attr/listDivider" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/due_amount"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/tenancyDueAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dummy_due_amount"
+                                android:textSize="20sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/viewHouseBtn"
+                            style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cornerRadius="0dp"
+                            app:icon="@drawable/house" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/viewUtilitiesOrPaymentsBtn"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/tenancyRoomType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:drawablePadding="8dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/dummy_tenancy_room_type"
+                            android:textSize="12sp"
+                            app:drawableStartCompat="@drawable/type" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/rvTitle"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:text="@string/title"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/rvNoItemsInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
+                android:text="@string/no_items_yet"
+                android:textAlignment="center"
+                android:textColor="@color/colorRed" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/utilitiesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:scrollbars="vertical"
+                tools:itemCount="2"
+                tools:listitem="@layout/utilities_list_item" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/paymentsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:scrollbars="vertical"
+                tools:itemCount="2"
+                tools:listitem="@layout/payments_list_item" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

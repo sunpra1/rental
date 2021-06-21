@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/formCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:clickable="true"
+        android:elevation="12dp"
+        android:focusable="true"
+        app:cardCornerRadius="0dp"
+        app:strokeColor="@color/colorLightGrey"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/utilityNameTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:boxCornerRadiusBottomEnd="0dp"
+                app:boxCornerRadiusBottomStart="0dp"
+                app:boxCornerRadiusTopEnd="0dp"
+                app:boxCornerRadiusTopStart="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/utilityNameEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/utility_name"
+                    android:inputType="text"
+                    android:padding="12dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/isUtilityVariableSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="@string/is_variable_cost" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/utilityPriceTil"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                app:boxCornerRadiusBottomEnd="0dp"
+                app:boxCornerRadiusBottomStart="0dp"
+                app:boxCornerRadiusTopEnd="0dp"
+                app:boxCornerRadiusTopStart="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/utilityPriceEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/utility_price"
+                    android:inputType="number"
+                    android:padding="12dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addUtilityBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/edit_utility"
+                app:cornerRadius="0dp" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</ScrollView>

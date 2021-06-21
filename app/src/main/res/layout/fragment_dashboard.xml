@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/wrapperTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@id/wrapperMiddle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:id="@+id/wrapper0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingStart="6dp"
+                        android:paddingTop="6dp"
+                        android:paddingEnd="6dp"
+                        android:paddingBottom="24dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="12dp"
+                            android:clickable="false"
+                            app:cardCornerRadius="0dp"
+                            app:cardElevation="8dp"
+                            app:strokeColor="@color/colorLightGrey"
+                            app:strokeWidth="1dp">
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:padding="12dp">
+
+                                <LinearLayout
+                                    android:id="@+id/wrapper1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/userImage"
+                                        android:layout_width="64dp"
+                                        android:layout_height="64dp"
+                                        android:contentDescription="@string/user_image"
+                                        android:scaleType="fitXY"
+                                        android:src="@mipmap/user" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/userRating"
+                                            style="@style/TextAppearance.AppCompat.Caption"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center_vertical"
+                                            android:text="@string/dummy_review"
+                                            app:drawableStartCompat="@drawable/star_yellow" />
+
+                                        <TextView
+                                            android:id="@+id/userName"
+                                            style="@style/TextAppearance.AppCompat.Subhead"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/dummy_user"
+                                            android:textColor="@color/colorPrimaryDark"
+                                            android:textSize="20sp" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/viewMoreWrapper"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/wrapper1">
+
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="1dp"
+                                        android:layout_weight="8"
+                                        android:background="?android:attr/listDivider" />
+
+                                    <TextView
+                                        android:id="@+id/viewMore"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:drawablePadding="4dp"
+                                        android:text="@string/view_more"
+                                        android:textColor="@color/colorGreen"
+                                        app:drawableEndCompat="@drawable/arrow_down_drop_circle" />
+
+                                    <TextView
+                                        android:id="@+id/viewLess"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:drawablePadding="4dp"
+                                        android:text="@string/view_less"
+                                        android:textColor="@color/colorRed"
+                                        app:drawableEndCompat="@drawable/arrow_up_drop_circle" />
+
+                                    <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="1dp"
+                                        android:layout_weight="1"
+                                        android:background="?android:attr/listDivider" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/moreDetailsWrapper"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:background="@drawable/grey_border"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="vertical"
+                                    android:padding="12dp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/viewMoreWrapper">
+
+                                    <TextView
+                                        android:id="@+id/userAddress"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:drawablePadding="4dp"
+                                        android:gravity="center_vertical"
+                                        android:text="@string/dummy_address"
+                                        app:drawableStartCompat="@drawable/address_dark_15" />
+
+                                    <TextView
+                                        android:id="@+id/userGender"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
+                                        android:drawablePadding="4dp"
+                                        android:gravity="center_vertical"
+                                        android:text="@string/dummy_gender"
+                                        app:drawableStartCompat="@drawable/gender_dark_15" />
+
+                                    <TextView
+                                        android:id="@+id/userDOB"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
+                                        android:drawablePadding="4dp"
+                                        android:gravity="center_vertical"
+                                        android:text="@string/dummy_dob"
+                                        app:drawableStartCompat="@drawable/baby_dark_15" />
+
+                                    <TextView
+                                        android:id="@+id/userContactNumber"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
+                                        android:drawablePadding="4dp"
+                                        android:gravity="center_vertical"
+                                        android:text="@string/dummy_contact_number"
+                                        app:drawableStartCompat="@drawable/phone_dark_15" />
+
+                                    <TextView
+                                        android:id="@+id/userEmailAddress"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="4dp"
+                                        android:drawablePadding="4dp"
+                                        android:gravity="center_vertical"
+                                        android:text="@string/dummy_email_address"
+                                        app:drawableStartCompat="@drawable/email_dark_15" />
+
+                                </LinearLayout>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/editProfileBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/wrapper0"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="12dp"
+                        android:contentDescription="@string/edit_profile"
+                        android:src="@drawable/pencil_white"
+                        android:tint="@color/colorWhite" />
+
+                </RelativeLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/wrapperMiddle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/wrapperTop">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/HousesWrapper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="0dp"
+                        app:cardElevation="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/TenanciesWrapper"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="@color/colorLightGrey"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:padding="18dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/house_image"
+                                    android:minWidth="48dp"
+                                    android:minHeight="48dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/house" />
+
+                                <TextView
+                                    android:id="@+id/userHousesCount"
+                                    style="@style/TextAppearance.AppCompat.Headline"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="8dp"
+                                    android:text="@string/dummy_number" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/house" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/TenanciesWrapper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="0dp"
+                        app:cardElevation="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toRightOf="@id/HousesWrapper"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="@color/colorLightGrey"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:padding="18dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:contentDescription="@string/house_image"
+                                    android:minWidth="48dp"
+                                    android:minHeight="48dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/tenant" />
+
+                                <TextView
+                                    android:id="@+id/userTenanciesCount"
+                                    style="@style/TextAppearance.AppCompat.Headline"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="8dp"
+                                    android:text="@string/dummy_number" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/tenancies" />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/wrapperBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/wrapperMiddle">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/settingBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingStart="6dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="6dp"
+                android:paddingBottom="12dp"
+                android:text="@string/settings"
+                app:cornerRadius="0dp"
+                app:icon="@drawable/setting" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/logOutBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingStart="6dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="6dp"
+                android:paddingBottom="12dp"
+                android:text="@string/log_out"
+                app:cornerRadius="0dp"
+                app:icon="@drawable/logout" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

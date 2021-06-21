@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@+id/houseFragmentMenu">
+        <item
+            android:id="@+id/addHouseOptionMenu"
+            android:icon="@drawable/plus"
+            android:title="@string/add_house"
+            app:showAsAction="ifRoom" />
+    </group>
+
+    <group android:id="@+id/selectLocationFragmentMenu">
+        <item
+            android:id="@+id/getCurrentLocationOptionMenu"
+            android:icon="@drawable/map_marker"
+            android:title="@string/get_your_location"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/setCurrentLocationOptionMenu"
+            android:icon="@drawable/check"
+            android:title="@string/set_current_location"
+            app:showAsAction="ifRoom" />
+    </group>
+
+    <group android:id="@+id/viewHouseFragmentMenu">
+        <item
+            android:id="@+id/viewTenancyHistoryOptionMenu"
+            android:title="@string/house_tenancy_history"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/addTenancyOptionMenu"
+            android:title="@string/add_tenancy"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/addToLetOptionMenu"
+            android:title="@string/add_to_let"
+            app:showAsAction="never" />
+    </group>
+
+    <group android:id="@+id/viewLocationFragmentMenu">
+        <item
+            android:id="@+id/getHouseLocationOptionMenu"
+            android:icon="@drawable/map_marker"
+            android:title="@string/get_your_location"
+            app:showAsAction="ifRoom" />
+    </group>
+
+    <group android:id="@+id/viewHouseTenancyFragmentMenu">
+        <item
+            android:id="@+id/callTenantOptionMenu"
+            android:icon="@drawable/phone_white"
+            android:title="@string/call_tenant"
+            app:showAsAction="ifRoom" />
+
+        <item
+            android:id="@+id/endTenancyOptionMenu"
+            android:title="@string/end_tenancy"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/addUtilityOptionMenu"
+            android:title="@string/add_utility"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/addPaymentOptionMenu"
+            android:title="@string/add_payment"
+            app:showAsAction="never" />
+    </group>
+
+    <group android:id="@+id/tenantTenancyFragmentMenu">
+        <item
+            android:id="@+id/tenantTenancyHistoryOptionMenu"
+            android:title="@string/house_tenancy_history"
+            app:showAsAction="never" />
+    </group>
+
+    <group android:id="@+id/tenantTenancyHouseFragmentMenu">
+        <item
+            android:id="@+id/callOwnerOptionMenu"
+            android:icon="@drawable/phone_white"
+            android:title="@string/call_owner"
+            app:showAsAction="ifRoom" />
+    </group>
+
+    <group android:id="@+id/toLetsFragmentMenu">
+        <item
+            android:id="@+id/filterToLetsOptionMenu"
+            android:icon="@drawable/filter_menu_white"
+            android:title="@string/filter_to_lets"
+            app:showAsAction="ifRoom" />
+    </group>
+</menu>

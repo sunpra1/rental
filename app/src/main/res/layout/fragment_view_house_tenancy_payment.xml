@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="8dp"
+            app:strokeColor="@color/colorLightGrey"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/paymentDate"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:text="@string/dummy_payment_date"
+                    android:textSize="15sp"
+                    app:drawableEndCompat="@drawable/calendar" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp">
+
+                    <TextView
+                        android:id="@+id/paidFor"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5.5"
+                        android:text="@string/particulars"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/paidCalc"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:text="@string/calculation"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/paidAmount"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:text="@string/total"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="?android:attr/listDivider" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/paymentDetailRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/payment_detail_item" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="?android:attr/listDivider" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9.5"
+                        android:text="@string/amount_payable"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/payableAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:text="@string/dummy_amount"
+                        android:textColor="@color/colorRed" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9.5"
+                        android:text="@string/amount_received"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/receivedAmount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:text="@string/dummy_amount"
+                        android:textColor="@color/colorRed" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </ScrollView>
+
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

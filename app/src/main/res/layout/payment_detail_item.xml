@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
+
+    <TextView
+        android:id="@+id/paidFor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5.5"
+        android:text="@string/paid_for" />
+
+    <TextView
+        android:id="@+id/paidCalc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:text="@string/for_units" />
+
+    <TextView
+        android:id="@+id/paidAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.5"
+        android:text="@string/dummy_amount" />
+
+</LinearLayout>

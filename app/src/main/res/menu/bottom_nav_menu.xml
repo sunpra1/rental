@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/house"
+        android:title="@string/title_houses" />
+
+    <item
+        android:id="@+id/navigation_tenancies"
+        android:icon="@drawable/tenant"
+        android:title="@string/tenancies" />
+
+    <item
+        android:id="@+id/navigation_to_lets"
+        android:icon="@drawable/to_let_dark"
+        android:title="@string/to_lets" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/dashboard"
+        android:title="@string/title_dashboard" />
+
+</menu>

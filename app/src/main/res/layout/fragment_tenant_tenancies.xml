@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.tenant_tenancies.TenantTenanciesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/noTenancyInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:gravity="center"
+            android:text="@string/no_tenancy_yet"
+            android:textColor="@color/colorRed" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tenantTenanciesRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="2"
+            tools:listitem="@layout/tenant_tenancies_list_item" />
+
+    </LinearLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

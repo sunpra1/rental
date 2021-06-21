@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.to_lets.ToLetsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/noToLetsInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:gravity="center"
+            android:text="@string/no_to_lets_found"
+            android:textColor="@color/colorRed" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchToLetsRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="2"
+            tools:listitem="@layout/search_to_lets_list_item" />
+
+    </LinearLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
